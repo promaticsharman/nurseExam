@@ -874,6 +874,18 @@ export class AdminService {
         catchError(this.error)
       )
   }
+  addFreeQues(data): Observable<any>{
+    let API_URL = `${this.apiUrl}addFreeQues`;
+    console.log(API_URL);
+    return this.httpClient.post(API_URL, data, httpOptions)
+      .pipe(
+        map(res => {
+          return res
+        }),
+        catchError(this.error)
+      )
+  }
+
 
   getQuestionsByTopicID(limit, offset, topic_id): Observable<any>{
     var obj = {

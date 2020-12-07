@@ -50,6 +50,11 @@
                                                   bullist numlist outdent indent | removeformat | help'
                                                 }" formControlName="question" required [(ngModel)]="examQuestion" [ngModelOptions]="{standalone: true}"> 
                                             </editor>
+                                            <div *ngIf="questionForm.controls['question'].invalid && (questionForm.controls['question'].dirty || questionForm.controls['question'].touched)" class="text-danger">
+                                                <div *ngIf="questionForm.controls['question'].errors.required">
+                                                 question is required.
+                                                </div>
+                                          </div>
                                         </div>
                                     </div>
                                 </div>

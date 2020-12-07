@@ -7,12 +7,12 @@
                         <h4 class="card-title ">Free Question List</h4>
                             <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                         <div class="text-right">
-                            <button mat-raised-button color="primary" routerLink="/add_free_questions">Add Free Question</button>
+                            <button mat-raised-button color="primary" routerLink="/add_free_questions/{{top_id}}/{{topicName}}">Add Free Question</button>
                         </div>
-                        <!-- <mat-form-field>
+                        <mat-form-field>
                             <mat-label>Filter</mat-label>
                             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Name">
-                        </mat-form-field> -->
+                        </mat-form-field>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

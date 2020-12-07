@@ -201,10 +201,10 @@ export class AddFreeQuestionComponent implements OnInit {
         formData.append('fillups_options', JSON.stringify(this.addOptions))
       }
 
-      this.service.addQuestion(formData).subscribe(data => {
+      this.service.addFreeQues(formData).subscribe(data => {
         console.log("Add Questions Data : ", data);
         Swal.fire('Success..!', 'Successfully Created!', 'success')
-        this.router.navigate(['questions-list/'+this.topic_id+'/'+this.route.snapshot.params.topic_name])
+        this.router.navigate(['free_question_list/'+this.topic_id+'/'+this.route.snapshot.params.topic_name])
       }, err => {
         if(err.status >= 400){
           console.log('Invalid Credential!!!');
@@ -213,5 +213,4 @@ export class AddFreeQuestionComponent implements OnInit {
         }
       })
     }
-
 }

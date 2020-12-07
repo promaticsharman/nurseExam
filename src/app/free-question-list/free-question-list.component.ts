@@ -58,10 +58,34 @@ export class FreeQuestionListComponent implements OnInit {
 	  this.datamodel = {}
 	  //console.log(this.route.snapshot.params.topic_id);
 	  
-	  
+	  this.topicName = this.route.snapshot.params.topic_name
+	  this.top_id = this.route.snapshot.params.topic_id
+	  console.log("Topic ID: ", this.top_id);
+
+	  this.getQuestion()
 
   }
 
+  getQuestion() {
+	this.service.getQuestionsByTopicID(this.reqData.limit, this.reqData.offset, this.top_id).subscribe(data => {
+		console.log("Topic Questions : ", data);
+		if (data) {
+			this.length = data.count;
+			this.dataSource = new MatTableDataSource(data.data);
+			this.dataSource.sort = this.sort;
+			this.dataSource.paginator = this.paginator;
+
+			console.log(this.dataSource);
+		}
+	}, err => {
+		console.log(err);
+		if (err.status >= 400) {
+			console.log('Invalid Credential!!!');
+		} else {
+			console.log('Internet Connection Error');
+		}
+	});
+}
    
 
 //   ngAfterViewInit() {

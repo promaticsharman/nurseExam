@@ -113,8 +113,8 @@ export const AdminLayoutRoutes: Routes = [
     { path : 'home-banner', component : HomeBannerListComponent},
     { path : 'add-home-banner', component : AddHomeBannerComponent},
     { path : 'edit-home-banner/:id', component : EditHomeBannerComponent},
-    { path:  'free_question_list', component:FreeQuestionListComponent},
-    { path:  'add_free_questions', component:AddFreeQuestionComponent}
+    { path:  'free_question_list/:topic_id/:topic_name', component:FreeQuestionListComponent},
+    { path:  'add_free_questions/:topic_id/:topic_name', component:AddFreeQuestionComponent}
     
 
     // { path : 'add-faq', component: AddFaqComponent}
